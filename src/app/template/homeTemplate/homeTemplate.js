@@ -6,12 +6,13 @@ export default class Home {
         this.data = data;
         this.archive = archive;
         this.category = category;
+        
     }
 
     getTemplate() {
         let notesList = new NoteListTemplate(this.data, this.archive).getNotesList();
         let footerApp = new Footer(this.data, this.category).getFooterList();
-
+        let iconButtonArchive = this.archive ? this.noteIcon : this.archiveIcon;
         return `
             <div class="container-list-notes">
                 <div class="header-list-notes">
@@ -22,16 +23,15 @@ export default class Home {
                     <h1 class=" w-16 header-list-notes-name">Dates</h1>
                     <div class="w-16 header-list-notes-name">
                         <button class="header-button" id="visible-list" title="archive All">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="header-button-icon" viewBox="0 0 20 20"
+                           <svg xmlns="http://www.w3.org/2000/svg" class="header-button-icon" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
                                 <path fill-rule="evenodd"
                                     d="M3 8h14v7a2 2 0 01-2 2H5a2 2 0 01-2-2V8zm5 3a1 1 0 011-1h2a1 1 0 110 2H9a1 1 0 01-1-1z"
                                     clip-rule="evenodd" />
-                            </svg>
-
+                            </svg
                         </button>
-                        <button class="header-button" title="delete All">
+                        <button class="header-button" id="delete-all-notes" title="delete All">
                             <svg xmlns="http://www.w3.org/2000/svg" class="header-button-icon" viewBox="0 0 20 20"
                                 fill="currentColor">
                                 <path fill-rule="evenodd"
@@ -40,6 +40,7 @@ export default class Home {
                             </svg>
                         </button>
                     </div>
+                    <div class="container-visible"></div>
                 </div>
                 <div class="content-list-notes" id="notes-list">
                     ${notesList}
@@ -56,7 +57,9 @@ export default class Home {
                     <h1 class="header-list-notes-name w-25">Archive</h1>
                 </div>
                 <div class="content-list-notes">
-                    ${footerApp}
+                    <div id="footer">
+                        ${footerApp}
+                    </div>
                 </div>
             </div>
         `

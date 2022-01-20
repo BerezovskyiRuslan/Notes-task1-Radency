@@ -1,4 +1,5 @@
 const state = {
+    isArchiveVisible: false,
     notes: [
         {
             id: 0,

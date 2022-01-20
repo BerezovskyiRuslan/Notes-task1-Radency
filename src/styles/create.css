@@ -7,11 +7,29 @@
 }
 
 .container-create-title {
+    display: flex;
+    justify-content: space-between;
     color: #666;
     font-size: 22px;
     margin: 10px 0px;
     text-transform: uppercase;
     border-bottom: 1px solid #777;
+}
+
+#close-form {
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+}
+
+#close-form svg {
+    background: transparent;
+}
+
+#close-form:hover {
+    background: #333;
+    color: #eee;
 }
 
 .container-create-item {
@@ -67,4 +85,11 @@
     width: 489px;
     height: 183px;
     resize: none;
+}
+
+.name-create-note {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #777;
+    padding: 3px 5px;
 }

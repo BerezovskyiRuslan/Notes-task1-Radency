@@ -1,29 +1,7 @@
 import Home from "../template/homeTemplate/homeTemplate";
 import CreateNotes from "../template/createOrEditTemplate/createOrEditTemplate";
 import NoteListTemplate from "../template/notesListTemplate/notesListTemplate";
-// import { state } from "../state/state";
-
-// let create;
-// let app = document.getElementById('app');
-
-// function renderApp() {
-
-//     let appRender = new Home(state.notes, false, state.category).getTemplate();
-
-    
-
-//     app.innerHTML = appRender;
-
-//     create = document.getElementById('create-note');
-
-//     create.addEventListener('click', () => {
-//         let createNoteTemplate = new CreateNotes(true, state.category, null, null).getCreatOrEditTemplate();
-
-//         app.innerHTML = createNoteTemplate;
-//     })
-
-//     console.log(create);
-// }
+import Footer from "../template/footerTemplate/footerTemplate";
 
 export default class Render {
     constructor(state = {}, element) {
@@ -40,7 +18,7 @@ export default class Render {
     }
 
     renderCreate() {
-        let createNoteTemplate = new CreateNotes(true, this.state.category, null, null).getCreatOrEditTemplate();
+        let createNoteTemplate = new CreateNotes(true, this.state.category, null).getCreatOrEditTemplate();
 
         this.element.innerHTML = createNoteTemplate;
     }
@@ -53,16 +31,15 @@ export default class Render {
     }
 
     renderActiveOrAcrhiveList(archive, elem) {
-        console.log(archive);
-        console.log(this.state.notes);
         let newList = new NoteListTemplate(this.state.notes, archive).getNotesList();
         
         elem.innerHTML = newList;
-        // console.log(newList);
     }
 
-    renderArchiveList(archive, elem) {
-        
+    renderFooter() {
+        let footer = new Footer(this.state.notes, this.state.category).getFooterList();
+
+        document.getElementById('footer').innerHTML = footer;
     }
 }
 
