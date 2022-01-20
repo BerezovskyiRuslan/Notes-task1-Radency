@@ -54,7 +54,6 @@ export default class Footer {
         let condition = this.counterCondition();
         
         let keys = Object.keys(condition);
-        console.log(condition);
         let result = '';
 
         for (let i = 0; i < keys.length; i++) {

@@ -87,9 +87,10 @@
     resize: none;
 }
 
-.name-create-note {
+#name-create-note {
     border: none;
     outline: none;
     border-bottom: 1px solid #777;
     padding: 3px 5px;
+    color: #66667c;
 }

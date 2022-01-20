@@ -51,8 +51,7 @@ export default class CreateNotes {
             name: "Save edit note",
             id: "save-edit-note"
         };
-        console.log(this.create,this.data);
-        // let checkClass = this.create ? { name: }
+        
         let category = this.getCategotyTemplate(this.data.category);
 
         return `<div class="container-create">
@@ -65,7 +64,7 @@ export default class CreateNotes {
                         </button>
                     </h1>
                    <div class="container-create-item">
-                        <label class="container-create-item-label" for="name-category">Category</label>
+                        <label class="container-create-item-label" for="name-category">Title</label>
                         <input type="text" id="name-create-note" value="${this.data.name}" />
                     </div>
                     <div class="container-create-item">

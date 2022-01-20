@@ -31,7 +31,7 @@ export default class Render {
     }
 
     renderActiveOrAcrhiveList(archive, elem) {
-        let newList = new NoteListTemplate(this.state.notes, archive).getNotesList();
+        let newList = new NoteListTemplate(this.state.notes, this.state.category, archive).getNotesList();
         
         elem.innerHTML = newList;
     }

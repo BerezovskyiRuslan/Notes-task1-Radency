@@ -55,6 +55,8 @@ function createNewNote() {
         let created = month + ' ' + day + ', ' + year;
         let archive = false;
 
+        dates = dates !== null ? dates : [];
+        
         new CreateController().createNewNote({
             name: name,
             created: created,
@@ -97,7 +99,7 @@ function saveEditNote() {
         let category = select.options[select.selectedIndex].value;
         let content = document.getElementById('content-create-note').value;
         let dates = content.match(/[0-3]?[0-9].[0-3]?[0-9].(?:[0-9]{2})?[0-9]{2}/g);
-        dates = dates != null ? dates : [];
+        dates = dates !== null ? dates : [];
 
         new CreateController().saveEditItemNote({
             id: event.name,

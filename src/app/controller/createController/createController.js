@@ -20,6 +20,7 @@ export default class CreateController extends Controller {
     }
 
     createNewNote(data) {
+        console.log(data);
         addNote(data);
 
         new HomeController().renderHome();

@@ -1,7 +1,8 @@
 export default class NoteListTemplate {
 
-    constructor(data, archive) {
+    constructor(data, category, archive) {
         this.data = data;
+        this.category = category;
         this.archive = archive;
         this.addArchiveIcon = `<svg xmlns="http://www.w3.org/2000/svg" class="content-list-notes-item-actions-button-icon" viewBox="0 0 20 20" fill="currentColor">
                                 <path d="M4 3a2 2 0 100 4h12a2 2 0 100-4H4z" />
@@ -15,12 +16,17 @@ export default class NoteListTemplate {
 
     }
 
+    getIconCategory(categoryName){
+        return this.category.filter(item => item.name == categoryName)[0].icon;
+    }
+
     getTemplate(data) {
         let icon = data.archive ? this.deleteArhiveIcon : this.addArchiveIcon;
+        let iconCategory = this.getIconCategory(data.category);
         return `<div class="container-content-list-notes-items" name="${data.id}">
     <div class="content-list-notes-item">
         <div class="w-16 first-content-position content-list-notes-item-text">
-            ${data.icon}
+            ${iconCategory}
             <span class="content-list-notes-item-text-span">
             ${data.name}
             </span>
@@ -74,7 +80,7 @@ export default class NoteListTemplate {
         <div class="content-list-notes-item-full-text">
             <div class="content-list-notes-item-full-name-category">
                 <div class="content-list-notes-item-name-icon-container">
-                    ${data.icon}
+                    ${iconCategory}
                 </div>
                 <h3>${data.name}</h3>
                 <span>|</span>
@@ -95,14 +101,14 @@ export default class NoteListTemplate {
 
     getNotesList() {
         if (!this.data.length) {
-            return "<p>Is Empty</p>"
+            return '<p class="text-empty">Is Empty</p>';
         }
         let notes = this.data.filter(item => item.archive === this.archive);
         
         if (!notes.length) {
-            return "<p>Is Empty</p>"
+            return '<p class="text-empty">Is Empty</p>';
         }
-        
+
         let result = '';
 
         for (let i = 0; i < notes.length; i++) {

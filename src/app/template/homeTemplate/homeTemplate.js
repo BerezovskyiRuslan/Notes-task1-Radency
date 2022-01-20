@@ -10,7 +10,7 @@ export default class Home {
     }
 
     getTemplate() {
-        let notesList = new NoteListTemplate(this.data, this.archive).getNotesList();
+        let notesList = new NoteListTemplate(this.data, this.category, this.archive).getNotesList();
         let footerApp = new Footer(this.data, this.category).getFooterList();
         let iconButtonArchive = this.archive ? this.noteIcon : this.archiveIcon;
         return `
