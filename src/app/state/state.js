@@ -4,7 +4,6 @@ const state = {
         {
             id: 0,
             name: 'Shopping list',
-            icon: `<div class="content-list-notes-item-name-icon-container"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class="content-list-notes-item-name-icon" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M27 433 c-13 -12 -7 -23 16 -32 15 -6 32 -32 54 -84 27 -66 29 -78 17 -94 -17 -23 -18 -57 0 -72 9 -8 55 -11 137 -9 102 3 124 6 124 18 0 12 -21 16 -118 18 -112 3 -117 3 -107 22 9 16 23 20 98 22 l87 3 43 75 c23 41 41 79 39 85 -2 6 -66 11 -160 13 -145 2 -156 4 -162 22 -6 20 -53 29 -68 13z" /><path d="M110 105 c-26 -32 13 -81 48 -59 9 6 18 19 20 28 8 38 -43 61 -68 31z" /><path d="M310 105 c-26 -32 13 -81 48 -59 22 14 27 41 12 59 -16 19 -44 19 -60 0z" /></g></svg></div>`,
             category: 'Task',
             dates: [],
             content: 'Tomato, bread, butter, salt, bottle of water,coffee',
@@ -14,7 +13,6 @@ const state = {
         {
             id: 1,
             name: 'Shopping list1',
-            icon: `<div class="content-list-notes-item-name-icon-container"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class="content-list-notes-item-name-icon" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M27 433 c-13 -12 -7 -23 16 -32 15 -6 32 -32 54 -84 27 -66 29 -78 17 -94 -17 -23 -18 -57 0 -72 9 -8 55 -11 137 -9 102 3 124 6 124 18 0 12 -21 16 -118 18 -112 3 -117 3 -107 22 9 16 23 20 98 22 l87 3 43 75 c23 41 41 79 39 85 -2 6 -66 11 -160 13 -145 2 -156 4 -162 22 -6 20 -53 29 -68 13z" /><path d="M110 105 c-26 -32 13 -81 48 -59 9 6 18 19 20 28 8 38 -43 61 -68 31z" /><path d="M310 105 c-26 -32 13 -81 48 -59 22 14 27 41 12 59 -16 19 -44 19 -60 0z" /></g></svg></div>`,
             category: 'Task',
             dates: [],
             content: 'Tomato, bread, butter, salt, bottle of water,coffee',
@@ -24,12 +22,20 @@ const state = {
         {
             id: 2,
             name: 'Shopping list2',
-            icon: `<div class="content-list-notes-item-name-icon-container"> <svg version="1.0" xmlns="http://www.w3.org/2000/svg" class="content-list-notes-item-name-icon" viewBox="0 0 48.000000 48.000000" preserveAspectRatio="xMidYMid meet"> <g transform="translate(0.000000,48.000000) scale(0.100000,-0.100000)" stroke="none"><path d="M27 433 c-13 -12 -7 -23 16 -32 15 -6 32 -32 54 -84 27 -66 29 -78 17 -94 -17 -23 -18 -57 0 -72 9 -8 55 -11 137 -9 102 3 124 6 124 18 0 12 -21 16 -118 18 -112 3 -117 3 -107 22 9 16 23 20 98 22 l87 3 43 75 c23 41 41 79 39 85 -2 6 -66 11 -160 13 -145 2 -156 4 -162 22 -6 20 -53 29 -68 13z" /><path d="M110 105 c-26 -32 13 -81 48 -59 9 6 18 19 20 28 8 38 -43 61 -68 31z" /><path d="M310 105 c-26 -32 13 -81 48 -59 22 14 27 41 12 59 -16 19 -44 19 -60 0z" /></g></svg></div>`,
             category: 'Task',
             dates: [],
             content: 'Tomato, bread, butter, salt, bottle of water,coffee',
             created: "April 10, 2021",
             archive: true
+        },
+        {
+            id: 3,
+            name: 'New Feature',
+            category: 'Idea',
+            dates: ['3/5/2021', '5/5/2021', '3/5/2021', '3/5/2021'],
+            content: 'I’m gonna have a dentist appointment on the 3/5/2021, I moved it from 5/5/2021 the dates column is 3/5/2021, 5/5/2021',
+            created: "April 10, 2021",
+            archive: false
         }
     ],
     category: [

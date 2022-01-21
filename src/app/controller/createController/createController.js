@@ -20,7 +20,9 @@ export default class CreateController extends Controller {
     }
 
     createNewNote(data) {
-        console.log(data);
+        if (!data.name.trim().length) {
+            data.name = 'New Note';
+        }
         addNote(data);
 
         new HomeController().renderHome();
@@ -28,6 +30,10 @@ export default class CreateController extends Controller {
     }
 
     saveEditItemNote(data) {
+        if (!data.name.trim().length) {
+            data.name = 'Edit Note';
+        }
+
         saveEditItemToState(data);
 
         new HomeController().renderHome();

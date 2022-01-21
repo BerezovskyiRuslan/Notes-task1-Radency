@@ -9,7 +9,7 @@ module.exports = {
         index: './index.js',
     },
     output: {
-        path: path.resolve(__dirname, 'dist/js'),
+        path: path.resolve(__dirname, 'dist/'),
         filename: '[name].[hash].js'
     },
     devServer: {
@@ -21,6 +21,11 @@ module.exports = {
         }),
         new CleanWebpackPlugin()
     ],
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
     module: {
         rules: [
             {

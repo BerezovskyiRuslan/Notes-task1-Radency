@@ -45,11 +45,13 @@ export default class CreateNotes {
         let form = this.create ? { 
             title: "Create New Note",
             name: "Add new note",
-            id: "create-new-note"
+            id: "create-new-note",
+            placeholderTitile: "New"
         } : {
             title: "Edit",
             name: "Save edit note",
-            id: "save-edit-note"
+            id: "save-edit-note",
+            placeholderTitile: "Edit"
         };
         
         let category = this.getCategotyTemplate(this.data.category);
@@ -65,7 +67,7 @@ export default class CreateNotes {
                     </h1>
                    <div class="container-create-item">
                         <label class="container-create-item-label" for="name-category">Title</label>
-                        <input type="text" id="name-create-note" value="${this.data.name}" />
+                        <input type="text" id="name-create-note" value="${this.data.name}" placeHolder="Default title: ${form.placeholderTitile} Note" />
                     </div>
                     <div class="container-create-item">
                         <label class="container-create-item-label" for="select-category">Category</label>
